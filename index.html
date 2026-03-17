@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ELOGE TECH - Automation Lead</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    header { background: #1E40AF; color: white; padding: 20px; text-align: center; }
+    .container { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    h2 { text-align: center; color: #1E40AF; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, textarea { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+    button { margin-top: 20px; padding: 15px; width: 100%; background: #1E40AF; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+    button:hover { background: #1e3a8a; }
+    .success { margin-top: 20px; padding: 15px; background: #D1FAE5; color: #065F46; border-radius: 5px; display: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ELOGE TECH - Automation Lead</h1>
+</header>
+
+<div class="container">
+  <h2>Envoyer un nouveau lead</h2>
+  <form id="leadForm">
+    <label for="name">Nom complet</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="company">Entreprise</label>
+    <input type="text" id="company" name="company" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="industry">Secteur / Industrie</label>
+    <input type="text" id="industry" name="industry" required>
+
+    <label for="source">Source du lead</label>
+    <input type="text" id="source" name="source" required>
+
+    <label for="message">Message / Besoin</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="submit">Envoyer le lead</button>
+  </form>
+
+  <div class="success" id="successMsg">Lead envoyé avec succès ! 🚀</div>
+</div>
+
+<script>
+  const form = document.getElementById('leadForm');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const webhookUrl = "https://elogetech.app.n8n.cloud/webhook-test/lead-intake"; // ton webhook n8n
+
+    const data = {
+      name: form.name.value,
+      company: form.company.value,
+      email: form.email.value,
+      industry: form.industry.value,
+      source: form.source.value,
+      message: form.message.value
+    };
+
+    try {
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        mode: 'cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        successMsg.style.display = 'block';
+        form.reset();
+      } else {
+        alert("Erreur lors de l'envoi du lead !");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Erreur réseau. Vérifie ton webhook !");
+    }
+  });
+</script>
+
+</body>
+</html>
