@@ -2,101 +2,121 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>ELOGE TECH - Automation Marketing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELOGE TECH - Automation IA</title>
 
 <style>
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background: #f5f7fb;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: white;
 }
 
 header {
-  background: #1E40AF;
-  color: white;
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3b82f6;
 }
 
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .hero h1 {
-  font-size: 32px;
-  color: #1E40AF;
+  font-size: 40px;
 }
 
 .hero p {
-  font-size: 18px;
-  color: #555;
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+.cta {
+  margin-top: 20px;
+  padding: 15px 25px;
+  background: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.stat {
+  text-align: center;
 }
 
 .section {
-  padding: 40px 20px;
+  padding: 60px 20px;
   max-width: 900px;
   margin: auto;
 }
 
-.features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.feature {
-  background: white;
+.card {
+  background: #1e293b;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
 }
 
-.container {
-  background: white;
+.form {
+  background: #1e293b;
   padding: 30px;
   border-radius: 10px;
-  margin-top: 40px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 input, textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: none;
 }
 
 button {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 15px;
   width: 100%;
-  background: #1E40AF;
-  color: white;
+  background: #3b82f6;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  color: white;
   cursor: pointer;
 }
 
-button:hover {
-  background: #1e3a8a;
-}
-
 .success {
-  margin-top: 20px;
-  padding: 15px;
-  background: #D1FAE5;
+  margin-top: 15px;
+  background: #16a34a;
+  padding: 10px;
   display: none;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
+/* WhatsApp button */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
   color: white;
-  margin-top: 40px;
 }
 </style>
 </head>
@@ -104,60 +124,72 @@ footer {
 <body>
 
 <header>
-  <h1>ELOGE TECH</h1>
-  <p>Automatisation intelligente des ventes et du marketing</p>
+  <div class="logo">ELOGE TECH</div>
 </header>
 
 <section class="hero">
-  <h1>Transformez vos leads en clients automatiquement 🚀</h1>
-  <p>IA + Emails personnalisés + Suivi automatique = plus de ventes sans effort</p>
-</section>
+  <h1>Automatisez vos ventes avec l’IA 🚀</h1>
+  <p>Transformez vos prospects en clients automatiquement</p>
 
-<section class="section">
-  <h2>🔥 Ce que vous gagnez</h2>
-  <div class="features">
-    <div class="feature">Analyse automatique des prospects avec IA</div>
-    <div class="feature">Scoring intelligent des leads</div>
-    <div class="feature">Emails personnalisés envoyés automatiquement</div>
-    <div class="feature">Suivi centralisé dans Google Sheets</div>
+  <button class="cta" onclick="document.getElementById('form').scrollIntoView()">
+    Demander une démo
+  </button>
+
+  <div class="stats">
+    <div class="stat">
+      <h2 id="leads">0</h2>
+      <p>Leads traités</p>
+    </div>
+    <div class="stat">
+      <h2>+65%</h2>
+      <p>Conversion</p>
+    </div>
+    <div class="stat">
+      <h2>24/7</h2>
+      <p>Automatisation</p>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>⚙️ Comment ça marche</h2>
-  <p>
-  1. Un prospect remplit le formulaire<br>
-  2. L’IA analyse son besoin<br>
-  3. Un email personnalisé est généré<br>
-  4. Le système envoie automatiquement si le lead est qualifié
-  </p>
+  <h2>🔥 Fonctionnalités</h2>
+
+  <div class="card">Analyse intelligente des prospects avec IA</div>
+  <div class="card">Scoring automatique des leads</div>
+  <div class="card">Emails personnalisés envoyés automatiquement</div>
+  <div class="card">Suivi en temps réel + notifications</div>
 </section>
 
-<section class="section">
-  <h2>🎯 Demander une démo</h2>
+<section class="section" id="form">
+  <h2>🎯 Demande de démo</h2>
 
-  <div class="container">
+  <div class="form">
     <form id="leadForm">
 
       <input type="text" name="name" placeholder="Nom complet" required>
       <input type="text" name="company" placeholder="Entreprise" required>
       <input type="email" name="email" placeholder="Email" required>
       <input type="text" name="industry" placeholder="Secteur" required>
-      <input type="text" name="source" placeholder="Source (LinkedIn, site...)" required>
-      <textarea name="message" placeholder="Décrivez votre besoin" required></textarea>
+      <input type="text" name="source" placeholder="Source" required>
+      <textarea name="message" placeholder="Votre besoin" required></textarea>
 
-      <button type="submit">Demander ma démo</button>
+      <button type="submit">Envoyer</button>
     </form>
 
     <div class="success" id="successMsg">
-      ✅ Demande envoyée ! Vous serez contacté rapidement.
+      ✅ Demande envoyée !
     </div>
   </div>
 </section>
 
-<footer>
-  © 2026 ELOGE TECH - Tous droits réservés
+<footer style="text-align:center;padding:20px;">
+  © 2026 ELOGE TECH
 </footer>
+
+<!-- WhatsApp -->
+<a class="whatsapp" href="https://wa.me/22871039904" target="_blank">
+💬
+</a>
 
 <script>
 const form = document.getElementById('leadForm');
@@ -187,14 +219,24 @@ form.addEventListener('submit', async (e) => {
     if (response.ok) {
       successMsg.style.display = 'block';
       form.reset();
+
+      // compteur dynamique
+      let leads = localStorage.getItem("leads") || 0;
+      leads++;
+      localStorage.setItem("leads", leads);
+      document.getElementById("leads").innerText = leads;
+
     } else {
-      alert("Erreur lors de l'envoi");
+      alert("Erreur");
     }
 
   } catch (err) {
     alert("Erreur réseau");
   }
 });
+
+// init compteur
+document.getElementById("leads").innerText = localStorage.getItem("leads") || 0;
 </script>
 
 </body>
