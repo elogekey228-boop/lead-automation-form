@@ -1,90 +1,200 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>ELOGE TECH - Automation Lead</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
-    header { background: #1E40AF; color: white; padding: 20px; text-align: center; }
-    .container { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    h2 { text-align: center; color: #1E40AF; }
-    label { display: block; margin-top: 15px; font-weight: bold; }
-    input, textarea { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
-    button { margin-top: 20px; padding: 15px; width: 100%; background: #1E40AF; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
-    button:hover { background: #1e3a8a; }
-    .success { margin-top: 20px; padding: 15px; background: #D1FAE5; color: #065F46; border-radius: 5px; display: none; }
-  </style>
+<meta charset="UTF-8">
+<title>ELOGE TECH - Automation Marketing</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f7fb;
+}
+
+header {
+  background: #1E40AF;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  color: #1E40AF;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+}
+
+.section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.feature {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 20px;
+  padding: 15px;
+  width: 100%;
+  background: #1E40AF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e3a8a;
+}
+
+.success {
+  margin-top: 20px;
+  padding: 15px;
+  background: #D1FAE5;
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+  margin-top: 40px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>ELOGE TECH - Automation Lead</h1>
+  <h1>ELOGE TECH</h1>
+  <p>Automatisation intelligente des ventes et du marketing</p>
 </header>
 
-<div class="container">
-  <h2>Envoyer un nouveau lead</h2>
-  <form id="leadForm">
-    <label for="name">Nom complet</label>
-    <input type="text" id="name" name="name" required>
+<section class="hero">
+  <h1>Transformez vos leads en clients automatiquement 🚀</h1>
+  <p>IA + Emails personnalisés + Suivi automatique = plus de ventes sans effort</p>
+</section>
 
-    <label for="company">Entreprise</label>
-    <input type="text" id="company" name="company" required>
+<section class="section">
+  <h2>🔥 Ce que vous gagnez</h2>
+  <div class="features">
+    <div class="feature">Analyse automatique des prospects avec IA</div>
+    <div class="feature">Scoring intelligent des leads</div>
+    <div class="feature">Emails personnalisés envoyés automatiquement</div>
+    <div class="feature">Suivi centralisé dans Google Sheets</div>
+  </div>
+</section>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+<section class="section">
+  <h2>⚙️ Comment ça marche</h2>
+  <p>
+  1. Un prospect remplit le formulaire<br>
+  2. L’IA analyse son besoin<br>
+  3. Un email personnalisé est généré<br>
+  4. Le système envoie automatiquement si le lead est qualifié
+  </p>
+</section>
 
-    <label for="industry">Secteur / Industrie</label>
-    <input type="text" id="industry" name="industry" required>
+<section class="section">
+  <h2>🎯 Demander une démo</h2>
 
-    <label for="source">Source du lead</label>
-    <input type="text" id="source" name="source" required>
+  <div class="container">
+    <form id="leadForm">
 
-    <label for="message">Message / Besoin</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
+      <input type="text" name="name" placeholder="Nom complet" required>
+      <input type="text" name="company" placeholder="Entreprise" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="industry" placeholder="Secteur" required>
+      <input type="text" name="source" placeholder="Source (LinkedIn, site...)" required>
+      <textarea name="message" placeholder="Décrivez votre besoin" required></textarea>
 
-    <button type="submit">Envoyer le lead</button>
-  </form>
+      <button type="submit">Demander ma démo</button>
+    </form>
 
-  <div class="success" id="successMsg">Lead envoyé avec succès ! 🚀</div>
-</div>
+    <div class="success" id="successMsg">
+      ✅ Demande envoyée ! Vous serez contacté rapidement.
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 ELOGE TECH - Tous droits réservés
+</footer>
 
 <script>
-  const form = document.getElementById('leadForm');
-  const successMsg = document.getElementById('successMsg');
+const form = document.getElementById('leadForm');
+const successMsg = document.getElementById('successMsg');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
 
-    const webhookUrl = "https://elogetech.app.n8n.cloud/webhook/lead-intake"; // ton webhook n8n
+  const webhookUrl = "https://elogetech.app.n8n.cloud/webhook/lead-intake";
 
-    const data = {
-      name: form.name.value,
-      company: form.company.value,
-      email: form.email.value,
-      industry: form.industry.value,
-      source: form.source.value,
-      message: form.message.value
-    };
+  const data = {
+    name: form.name.value,
+    company: form.company.value,
+    email: form.email.value,
+    industry: form.industry.value,
+    source: form.source.value,
+    message: form.message.value
+  };
 
-    try {
-      const response = await fetch(webhookUrl, {
-        method: 'POST',
-        mode: 'cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
+  try {
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
 
-      if (response.ok) {
-        successMsg.style.display = 'block';
-        form.reset();
-      } else {
-        alert("Erreur lors de l'envoi du lead !");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Erreur réseau. Vérifie ton webhook !");
+    if (response.ok) {
+      successMsg.style.display = 'block';
+      form.reset();
+    } else {
+      alert("Erreur lors de l'envoi");
     }
-  });
+
+  } catch (err) {
+    alert("Erreur réseau");
+  }
+});
 </script>
 
 </body>
